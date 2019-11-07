@@ -1,13 +1,14 @@
-
+DROP DATABASE IF EXISTS nhanvien;
 CREATE DATABASE IF NOT EXISTS nhanvien;
 USE nhanvien;
 -- Question 1: Tạo table với các ràng buộc và kiểu dữ liệu 
+DROP TABLE IF EXISTS Department;
 CREATE TABLE 		Department 
 (
 		Department_Number  		TINYINT AUTO_INCREMENT PRIMARY KEY ,
 		Department_Name			NVARCHAR(30) NOT NULL 
 );
-
+DROP TABLE IF EXISTS Employee_Table;
 CREATE TABLE  Employee_Table
  (
 		Employee_Number			SMALLINT AUTO_INCREMENT PRIMARY KEY ,
@@ -15,7 +16,7 @@ CREATE TABLE  Employee_Table
         Department_Number		TINYINT NOT NULL,
         FOREIGN KEY (Department_Number) REFERENCES Department(Department_Number)
 	);
-    
+    DROP TABLE IF EXISTS Employee_Skill_Table;
 CREATE TABLE   Employee_Skill_Table 
 (
 		Employee_Number		SMALLINT AUTO_INCREMENT PRIMARY KEY, 
@@ -94,4 +95,4 @@ SELECT 			et.Employee_Number,		et.Employee_Name,	es.Skill_Code, COUNT(es.Employe
 FROM 			Employee_Table et
 JOIN			Employee_Skill_Table es ON et.Employee_Number=es.Employee_Number
 GROUP BY		es.Employee_Number
-HAVING			dsnhavien>1;
+HAVING			COUNT(es.Employee_Number)>1;

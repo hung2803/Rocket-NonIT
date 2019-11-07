@@ -1,13 +1,13 @@
 -- EX1
 DROP DATABASE IF EXISTS fresher;
 CREATE DATABASE IF NOT EXISTS fresher;
-
+USE fresher;
 DROP TABLE IF EXISTS Trainee;
 CREATE TABLE Trainee (
     TraineeID		 		SMALLINT PRIMARY KEY AUTO_INCREMENT,
     Full_name		 		NVARCHAR(50) NOT NULL,
     Birth_date		 		DATE NOT NULL,
-    Gender 		 			ENUM('male', 'famale', 'unknown') NOT NULL,
+    Gender 		 			ENUM('male', 'female', 'unknown') NOT NULL,
     ET_IQ 			 		TINYINT(20) NOT NULL,
     ET_Gmath 		 		TINYINT(20) NOT NULL,
     ET_English		 		TINYINT(50) NOT NULL,

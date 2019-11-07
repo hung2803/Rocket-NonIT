@@ -36,6 +36,18 @@ WHERE
             product
         WHERE
             ProductSubcategoryID = 3);
+-- ***
+  
+     
+   SELECT 		p.Name
+   FROM 		product	AS p
+   WHERE		p.ListPrice IN(
+							SELECT 		MIN(p.ListPrice)
+							FROM 		product AS p
+							WHERE		p.ProductSubcategoryID IN(
+															SELECT 		psc.ProductSubcategoryID
+															FROM 		productsubcategory AS psc
+															WHERE		psc.Name='Touring Bikes'));
 
 -- Exercise 2: JOIN nhiều bảng  
 -- Question 1: Viết query lấy danh sách tên country và province được lưu  trong AdventureWorks2008sample database. 
@@ -65,5 +77,5 @@ WHERE  			C.name = 'Germany' OR C.name = 'Canada';
  JOIN			salesorderheader sod ON (s.SalesPersonID = sod.SalesPersonID )	
  JOIN 			employee e ON (s.SalesPersonID =  e.EmployeeID);
  
+    
  
-
