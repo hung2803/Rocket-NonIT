@@ -13,12 +13,14 @@ public class Assignments3 {
 		// o 1 sinh viên có điểm 0.
 
 		Random random = new Random();
-		String[] diem = new String[10];
-		int diem_Number;
+		String[] diem = new String[1];
+		
+		int phanTichYeuCau;
 		for (int i = 0; i < 10; i++) {
-			diem_Number = random.nextInt(9999999 - 1000000 + 1) + 1000000;
-		
-		
-		
+			phanTichYeuCau = random.nextInt(10 - 8 + 1) + 8;
+			diem[i] = diem[phanTichYeuCau];
+			System.out.println(diem[i]);
+
+		}
 	}
-}}
+}
