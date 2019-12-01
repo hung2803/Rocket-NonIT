@@ -1,5 +1,5 @@
 
-public class diem {
+public class Diem {
 	int phanTichYeuCau;
 	int thietKePhanMem;
 	int lapTrinhJava;

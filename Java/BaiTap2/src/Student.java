@@ -4,5 +4,5 @@ public class Student {
 	String hoVaTen;
 	String ID;
 	LocalDate ngaySinh;
-	int diem;
+	Diem diem;
 }
